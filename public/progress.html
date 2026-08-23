@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="lv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mans darba burtnīca</title>
+    <link rel="icon" href="/favicon.png" type="image/png" />
+    <style>
+      :root {
+        --paper: #f4ecd8;
+        --ink: #3d2a1a;
+        --moss: #1e3d28;
+        --stamp: #c45c26;
+        --line: #d9c9a8;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: Georgia, 'Times New Roman', serif;
+        color: var(--ink);
+        background:
+          radial-gradient(ellipse at 20% 0%, #fff8ea 0%, transparent 50%),
+          radial-gradient(ellipse at 90% 80%, #e8f0e4 0%, transparent 45%),
+          var(--paper);
+      }
+      .book {
+        max-width: 820px;
+        margin: 0 auto;
+        padding: 28px 20px 48px;
+      }
+      header {
+        text-align: center;
+        margin-bottom: 28px;
+      }
+      h1 {
+        margin: 0 0 8px;
+        font-weight: 600;
+        font-size: 2rem;
+        color: var(--moss);
+      }
+      .subtitle {
+        margin: 0;
+        font-style: italic;
+        opacity: 0.8;
+      }
+      .chapter {
+        margin: 28px 0 12px;
+        font-size: 1.25rem;
+        color: var(--moss);
+        border-bottom: 2px dotted var(--line);
+        padding-bottom: 6px;
+      }
+      .pages {
+        display: grid;
+        gap: 14px;
+      }
+      .page {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        gap: 14px;
+        align-items: center;
+        padding: 16px 18px;
+        background: rgba(255, 252, 245, 0.88);
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        box-shadow: 0 8px 0 rgba(61, 107, 79, 0.06);
+      }
+      .stamp {
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        font-size: 1.6rem;
+        border: 3px dashed var(--line);
+        color: var(--line);
+        transform: rotate(-8deg);
+      }
+      .page.done .stamp {
+        border-color: var(--stamp);
+        color: var(--stamp);
+        background: rgba(196, 92, 38, 0.08);
+      }
+      .title {
+        font-size: 1.15rem;
+        margin: 0 0 6px;
+      }
+      .meta {
+        margin: 0;
+        font-size: 0.95rem;
+        opacity: 0.75;
+      }
+      .stars {
+        letter-spacing: 0.12em;
+        font-size: 1.25rem;
+        color: #d4a017;
+        white-space: nowrap;
+      }
+      .empty {
+        text-align: center;
+        padding: 24px;
+        font-style: italic;
+      }
+      .back {
+        display: block;
+        text-align: center;
+        margin-top: 36px;
+        color: var(--moss);
+        font-weight: 600;
+      }
+      @media (max-width: 560px) {
+        .page {
+          grid-template-columns: auto 1fr;
+        }
+        .stars {
+          grid-column: 2;
+        }
+      }
+    </style>
+    <script src="/js/progress.js"></script>
+  </head>
+  <body>
+    <div class="book">
+      <header>
+        <h1>Mans darba burtnīca</h1>
+        <p class="subtitle">Zvaigznītes par labāko reizi, ķeksītis kad uzdevums ir pabeigts</p>
+      </header>
+      <div id="workbook"></div>
+      <a class="back" href="/">← Atpakaļ pie uzdevumiem</a>
+    </div>
+    <script>
+      const chapters = [
+        {
+          title: '2. klase · Matemātika',
+          tasks: [
+            { id: 'time', title: 'Laiks (pulksteņi)' },
+            { id: 'warmup', title: 'Iesildīšanās' },
+            { id: 'plus-minus', title: 'Saskaitīšana un atņemšana' },
+            { id: 'multiplication', title: 'Reizināšana' },
+          ],
+        },
+        {
+          title: '2. klase · Latviešu valoda',
+          tasks: [
+            { id: 'zilbes (vārdu dalīšana)', title: 'Zilbes' },
+            { id: 'lielie burti un īpašības vārdi', title: 'Lielie burti un īpašvārdi' },
+            { id: 'latviesu-teikumi', title: 'Sakārto vārdus teikumā' },
+            { id: 'darbibas-vardi', title: 'Darbības vārdi' },
+          ],
+        },
+      ];
+
+      function starCount(completed, best) {
+        if (!completed) return 0;
+        if (best === 'nav' || best === 'nav vēl') return Math.min(3, completed);
+        const errors = parseInt(best, 10);
+        if (errors === 0) return 5;
+        if (errors === 1) return 4;
+        if (errors <= 3) return 3;
+        if (errors <= 6) return 2;
+        return 1;
+      }
+
+      function renderStars(count) {
+        return '★'.repeat(count) + '☆'.repeat(5 - count);
+      }
+
+      function applySavedAccessibility() {
+        try {
+          const settings = JSON.parse(
+            localStorage.getItem('accessibilitySettings') || 'null'
+          );
+          if (!settings) return;
+          if (settings.bgColor) document.body.style.background = settings.bgColor;
+          if (settings.textColor) document.body.style.color = settings.textColor;
+          if (settings.fontFamily) document.body.style.fontFamily = settings.fontFamily;
+          if (settings.fontSize) document.body.style.fontSize = settings.fontSize;
+        } catch (error) {
+          console.warn(error);
+        }
+      }
+
+      function renderWorkbook() {
+        const root = document.getElementById('workbook');
+        root.innerHTML = chapters
+          .map((chapter) => {
+            const pages = chapter.tasks
+              .map((task) => {
+                const completed = parseInt(
+                  localStorage.getItem(`completed_${task.id}`) || '0',
+                  10
+                );
+                const best = localStorage.getItem(`best_${task.id}`) || 'nav';
+                const stars = starCount(completed, best);
+                const done = completed > 0;
+                const bestText =
+                  best === 'nav' || best === 'nav vēl'
+                    ? 'vēl nav labākā rezultāta'
+                    : `labākais: ${best} kļūdas`;
+                return `
+                  <article class="page${done ? ' done' : ''}">
+                    <div class="stamp" aria-hidden="true">${done ? '✓' : '○'}</div>
+                    <div>
+                      <p class="title">${task.title}</p>
+                      <p class="meta">${
+                        done
+                          ? `Pabeigts ${completed}× · ${bestText}`
+                          : 'Vēl nav pabeigts — atver uzdevumu un pamēģini'
+                      }</p>
+                    </div>
+                    <div class="stars" aria-label="${stars} no 5 zvaigznēm">${renderStars(stars)}</div>
+                  </article>
+                `;
+              })
+              .join('');
+            return `<h2 class="chapter">${chapter.title}</h2><div class="pages">${pages}</div>`;
+          })
+          .join('');
+      }
+
+      applySavedAccessibility();
+      renderWorkbook();
+    </script>
+  </body>
+</html>

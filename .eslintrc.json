@@ -1,0 +1,28 @@
+{
+  "env": {
+    "browser": true,
+    "node": true,
+    "es2021": true
+  },
+  "globals": {
+    "window": "readonly",
+    "document": "readonly",
+    "localStorage": "readonly",
+    "fetch": "readonly",
+    "alert": "readonly",
+    "console": "readonly",
+    "navigator": "readonly",
+    "location": "readonly",
+    "setTimeout": "readonly",
+    "MutationObserver": "readonly",
+    "confirm": "readonly"
+  },
+  "extends": ["eslint:recommended"],
+  "parserOptions": {
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "rules": {
+    "no-console": "off"
+  }
+}
