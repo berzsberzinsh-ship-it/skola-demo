@@ -31,7 +31,6 @@ export default function RootLayout({
         <Script src="/js/i18n.js" strategy="afterInteractive" />
         <Script src="/public.js" strategy="afterInteractive" />
         <Script src="/script.js" strategy="afterInteractive" />
-        <Script src="/js/type.js" strategy="afterInteractive" />
         <Script
           dangerouslySetInnerHTML={{
             __html: `
