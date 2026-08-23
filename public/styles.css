@@ -172,9 +172,7 @@ body.public-view #publicContent {
   min-height: 50vh;
   overflow: hidden;
   background:
-    radial-gradient(ellipse at 20% 0%, #7aa56a 0%, transparent 50%),
-    radial-gradient(ellipse at 90% 80%, #2d5a3d 0%, transparent 55%),
-    linear-gradient(180deg, #4a7c59 0%, #1e3d28 100%);
+    url('/sebastian-unrau-sp-p7uuT0tw-unsplash.jpg') center / cover no-repeat;
 }
 
 #publicContent .public-stage::before {
