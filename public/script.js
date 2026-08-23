@@ -1,6 +1,6 @@
 /* global document, localStorage, fetch, alert, console, navigator, location, setTimeout, setInterval, clearInterval, window */
 
-let currentAddress = 'K';
+let currentAddress = 'P';
 let currentSection = 'sodien';
 let currentGrade = '';
 let currentQuery = '';
@@ -284,14 +284,14 @@ function setupEventListeners() {
 
 function generateGradeOptions(address) {
   let allClasses;
-  if (address === 'K') {
+  if (address === 'P') {
     allClasses = [
       '1.a;1.klase;1.kl.',
       '2.a;2.klase;2.kl.',
       '3.a;3.klase;3.kl.',
       '5.a;5.klase;5.kl.',
     ];
-  } else if (address === 'Š') {
+  } else if (address === 'E') {
     allClasses = [
       '6.a;6.klase;6.kl.',
       '7.a;7.klase;7.kl.',
@@ -316,18 +316,26 @@ function generateGradeOptions(address) {
 }
 
 function gradePrefKey(address) {
-  return address === 'Š' ? 'rvs_grade_S' : 'rvs_grade_K';
+  return address === 'E' ? 'rvs_grade_E' : 'rvs_grade_P';
+}
+
+function normalizeCampus(code) {
+  if (code === 'K') return 'P';
+  if (code === 'Š' || code === 'S') return 'E';
+  if (code === 'P' || code === 'E') return code;
+  return '';
 }
 
 function applyAddressToggle() {
   const toggle = document.getElementById('address-toggle');
-  if (toggle) toggle.checked = currentAddress === 'K';
+  if (toggle) toggle.checked = currentAddress === 'P';
 }
 
 function restorePreferences() {
-  const savedAddress = localStorage.getItem(PREF_ADDRESS);
-  if (savedAddress === 'K' || savedAddress === 'Š') {
+  const savedAddress = normalizeCampus(localStorage.getItem(PREF_ADDRESS));
+  if (savedAddress) {
     currentAddress = savedAddress;
+    localStorage.setItem(PREF_ADDRESS, savedAddress);
   }
   applyAddressToggle();
   generateGradeOptions(currentAddress);
@@ -632,9 +640,10 @@ function applyShareLinkFromUrl() {
   const params = new URLSearchParams(location.search);
   const klase = (params.get('klase') || '').trim();
   const adrese = params.get('adrese');
-  if (adrese === 'K' || adrese === 'Š') {
-    currentAddress = adrese;
-    localStorage.setItem(PREF_ADDRESS, adrese);
+  const campus = normalizeCampus(adrese);
+  if (campus) {
+    currentAddress = campus;
+    localStorage.setItem(PREF_ADDRESS, campus);
     applyAddressToggle();
     generateGradeOptions(currentAddress);
   }
@@ -1098,7 +1107,7 @@ function fillFilterDatalists(lessonData, clubs, konsultacijas) {
 }
 
 function campusLabel(address) {
-  return address === 'Š' ? 'Ezera iela 5' : 'Parka iela 12';
+  return address === 'E' ? 'Ezera iela 5' : 'Parka iela 12';
 }
 
 function typeLabel(type) {
@@ -1589,7 +1598,7 @@ async function renderLessonTable() {
 
 function handleAddressToggle() {
   const toggle = document.getElementById('address-toggle');
-  currentAddress = toggle.checked ? 'K' : 'Š';
+  currentAddress = toggle.checked ? 'P' : 'E';
   localStorage.setItem(PREF_ADDRESS, currentAddress);
   generateGradeOptions(currentAddress);
   const savedGrade = localStorage.getItem(gradePrefKey(currentAddress)) || '';

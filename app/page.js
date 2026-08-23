@@ -238,8 +238,8 @@ export default function Home() {
               <label className="toggle-switch">
                 <input type="checkbox" id="address-toggle" defaultChecked />
                 <span className="slider">
-                  <span className="slider-text-k">P</span>
-                  <span className="slider-text-s">E</span>
+                  <span className="slider-text-p">P</span>
+                  <span className="slider-text-e">E</span>
                 </span>
               </label>
               <button

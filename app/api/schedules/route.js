@@ -1,7 +1,7 @@
 import { verifyToken } from '../verify/route.js';
 import { NextResponse } from 'next/server';
 
-const scheduleDataK = [
+const scheduleDataP = [
   {
     name: 'Koris',
     location: 'Parka iela 12 / zāle',
@@ -48,7 +48,7 @@ const scheduleDataK = [
   },
 ];
 
-const scheduleDataS = [
+const scheduleDataE = [
   {
     name: 'Koris',
     location: 'Ezera iela 5 / zāle',
@@ -98,8 +98,8 @@ export async function GET(request) {
   }
 
   const { searchParams } = new URL(request.url);
-  const address = searchParams.get('address') || 'K';
-  const data = address === 'K' ? scheduleDataK : scheduleDataS;
+  const address = searchParams.get('address') || 'P';
+  const data = address === 'P' ? scheduleDataP : scheduleDataE;
 
   return NextResponse.json({ schedules: data });
 }

@@ -519,7 +519,7 @@ footer a {
   overflow: hidden;
 }
 
-.slider-text-k {
+.slider-text-p {
   position: absolute;
   left: 15px;
   top: 50%;
@@ -530,7 +530,7 @@ footer a {
   transition: color 0.4s;
 }
 
-.slider-text-s {
+.slider-text-e {
   position: absolute;
   right: 15px;
   top: 50%;
@@ -541,11 +541,11 @@ footer a {
   transition: color 0.4s;
 }
 
-input:checked + .slider .slider-text-k {
+input:checked + .slider .slider-text-p {
   color: purple;
 }
 
-input:checked + .slider .slider-text-s {
+input:checked + .slider .slider-text-e {
   color: #666;
 }
 
@@ -1051,16 +1051,16 @@ input:checked + .slider:before {
     height: 25px;
   }
 
-  .slider-text-k,
-  .slider-text-s {
+  .slider-text-p,
+  .slider-text-e {
     font-size: 12px;
   }
 
-  .slider-text-k {
+  .slider-text-p {
     left: 12px;
   }
 
-  .slider-text-s {
+  .slider-text-e {
     right: 12px;
   }
 

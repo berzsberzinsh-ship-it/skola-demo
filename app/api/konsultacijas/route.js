@@ -1,7 +1,7 @@
 import { verifyToken } from '../verify/route.js';
 import { NextResponse } from 'next/server';
 
-const konsultacijasDataK = [
+const konsultacijasDataP = [
   {
     name: '',
     location: 'Parka iela 12',
@@ -52,7 +52,7 @@ const konsultacijasDataK = [
   },
 ];
 
-const konsultacijasDataS = [
+const konsultacijasDataE = [
   {
     name: '',
     location: 'Ezera iela 5',
@@ -105,8 +105,8 @@ export async function GET(request) {
   }
 
   const { searchParams } = new URL(request.url);
-  const address = searchParams.get('address') || 'K';
-  const data = address === 'K' ? konsultacijasDataK : konsultacijasDataS;
+  const address = searchParams.get('address') || 'P';
+  const data = address === 'P' ? konsultacijasDataP : konsultacijasDataE;
 
   return NextResponse.json({ konsultacijas: data });
 }

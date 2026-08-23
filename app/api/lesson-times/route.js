@@ -8,7 +8,7 @@ function les(stunda, laiks, nosaukums, telpa, skolotājs) {
 const LUNCH = les('P.*', '11.50-12.20', '*Pusdienas*', '', '');
 const SNACK = les('L.*', '14.40-15.00', '*Launags*', '', '');
 
-const lessonTimesK = {
+const lessonTimesP = {
   '1.a': {
     Pirmdiena: [
       les('1.-2.', '08.30-10.00', 'Perioda stunda', '101.k.', 'Anna Liepiņa'),
@@ -180,7 +180,7 @@ const lessonTimesK = {
   },
 };
 
-const lessonTimesS = {
+const lessonTimesE = {
   '6.a': {
     Pirmdiena: [
       les('1.-2.', '08.30-10.00', 'Perioda stunda', '301.k.', 'Baiba Ceriņa'),
@@ -309,8 +309,8 @@ export async function GET(request) {
   }
 
   const { searchParams } = new URL(request.url);
-  const address = searchParams.get('address') || 'K';
-  const data = address === 'K' ? lessonTimesK : lessonTimesS;
+  const address = searchParams.get('address') || 'P';
+  const data = address === 'P' ? lessonTimesP : lessonTimesE;
 
   return NextResponse.json({ lessonTimes: data });
 }
