@@ -1351,7 +1351,7 @@ async function renderTodayView() {
     html += `<p class="today-empty">${t('noTodayEntries')}</p>`;
   }
 
-  html += `<p class="today-actions"><button type="button" class="today-week-btn" id="today-week-btn">${t('seeWholeWeek')}</button></p>`;
+  html += `<p class="today-actions"><button type="button" class="today-week-btn" id="today-week-btn" data-guide="guideWeek">${t('seeWholeWeek')}</button></p>`;
   html += `</div>`;
   return html;
 }
@@ -1558,8 +1558,8 @@ async function renderLessonTable() {
       <h2>${escapeHtml(code)} ${t('week')}</h2>
       <p>${escapeHtml(campusLabel(currentAddress))} · ${t('semester2')}${updated ? ` · ${escapeHtml(updated)}` : ''}</p>
       <div class="print-week-actions">
-        <button type="button" id="print-week-btn">${t('print')}</button>
-        <button type="button" id="share-week-btn">${shareLabel}</button>
+        <button type="button" id="print-week-btn" data-guide="guidePrint">${t('print')}</button>
+        <button type="button" id="share-week-btn" data-guide="guideShare">${shareLabel}</button>
       </div>
     </header>
     <div class="table-scroll">`;
@@ -2357,6 +2357,7 @@ if (document.readyState === 'loading') {
       button.type = 'button';
       button.id = 'flipbook-toggle';
       button.className = 'flipbook-toggle';
+      button.setAttribute('data-guide', 'guideNotes');
       button.setAttribute('aria-expanded', 'false');
       button.setAttribute('aria-controls', 'flipbook-notes');
       this.toggleBtn = button;
@@ -2401,6 +2402,7 @@ if (document.readyState === 'loading') {
       this.container.className = 'flipbook-notes';
       this.container.setAttribute('role', 'dialog');
       this.container.setAttribute('aria-label', t('notes'));
+      this.container.setAttribute('data-guide', 'guideNotesWindow');
 
       const title = document.createElement('h3');
       title.className = 'flipbook-title';
@@ -2409,6 +2411,7 @@ if (document.readyState === 'loading') {
       const addBtn = document.createElement('button');
       addBtn.type = 'button';
       addBtn.className = 'add-note';
+      addBtn.setAttribute('data-guide', 'guideNotesAdd');
       addBtn.textContent = t('notesAdd');
       addBtn.addEventListener('click', (e) => {
         e.stopPropagation();

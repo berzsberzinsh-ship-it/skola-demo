@@ -8,8 +8,12 @@ export default function Home() {
     <>
       {/* Login modal (password protection for schedules) */}
       <div id="loginModal" className="modal">
-        <div className="modal-content">
-          <span className="close" onClick={() => closeLogin()}>
+        <div className="modal-content" data-guide="guideLoginWindow">
+          <span
+            className="close"
+            onClick={() => closeLogin()}
+            data-guide="guideClose"
+          >
             &times;
           </span>
           <h2 data-i18n="loginTitle">Ienākt sistēmā</h2>
@@ -22,9 +26,14 @@ export default function Home() {
               id="passwordInput"
               placeholder="Parole"
               data-i18n-placeholder="password"
+              data-guide="guideLoginPassword"
               required
             />
-            <button type="submit" data-i18n="loginSubmit">
+            <button
+              type="submit"
+              data-i18n="loginSubmit"
+              data-guide="guideLoginSubmit"
+            >
               Ienākt
             </button>
           </form>
@@ -36,55 +45,59 @@ export default function Home() {
 
       {/* Accessibility / appearance settings modal */}
       <div id="settingsModal" className="modal">
-        <div className="modal-content">
-          <span className="close" onClick={() => closeSettings()}>
+        <div className="modal-content" data-guide="guideSettingsWindow">
+          <span
+            className="close"
+            onClick={() => closeSettings()}
+            data-guide="guideClose"
+          >
             &times;
           </span>
           <h2 data-i18n="settings">Piekļūstamības iestatījumi</h2>
           <form id="settingsForm">
-            <div className="setting-group">
+            <div className="setting-group" data-guide="guideSettingField">
               <label htmlFor="bgColor" data-i18n="bgColor">
                 Fona krāsa:
               </label>
               <input type="color" id="bgColor" defaultValue="#f9f9f9" />
             </div>
-            <div className="setting-group">
+            <div className="setting-group" data-guide="guideSettingField">
               <label htmlFor="textColor" data-i18n="textColor">
                 Teksta krāsa:
               </label>
               <input type="color" id="textColor" defaultValue="#333333" />
             </div>
-            <div className="setting-group">
+            <div className="setting-group" data-guide="guideSettingField">
               <label htmlFor="headerBg" data-i18n="headerBg">
                 Titullauka krāsa:
               </label>
               <input type="color" id="headerBg" defaultValue="#1e3d28" />
             </div>
-            <div className="setting-group">
+            <div className="setting-group" data-guide="guideSettingField">
               <label htmlFor="accentColor" data-i18n="accentColor">
                 Akcenta krāsa:
               </label>
               <input type="color" id="accentColor" defaultValue="#7123a5" />
             </div>
-            <div className="setting-group">
+            <div className="setting-group" data-guide="guideSettingField">
               <label htmlFor="borderColor" data-i18n="borderColor">
                 Robežu krāsa:
               </label>
               <input type="color" id="borderColor" defaultValue="#dddddd" />
             </div>
-            <div className="setting-group">
+            <div className="setting-group" data-guide="guideSettingField">
               <label htmlFor="cardBg" data-i18n="cardBg">
                 Kartīšu fona krāsa:
               </label>
               <input type="color" id="cardBg" defaultValue="#ffffff" />
             </div>
-            <div className="setting-group">
+            <div className="setting-group" data-guide="guideSettingField">
               <label htmlFor="modalBg" data-i18n="modalBg">
                 Modāļa fona krāsa:
               </label>
               <input type="color" id="modalBg" defaultValue="#fefefe" />
             </div>
-            <div className="setting-group">
+            <div className="setting-group" data-guide="guideSettingField">
               <label htmlFor="fontFamily" data-i18n="fontFamily">
                 Fonts:
               </label>
@@ -99,7 +112,7 @@ export default function Home() {
                 <option value="'Lato', sans-serif">Lato</option>
               </select>
             </div>
-            <div className="setting-group">
+            <div className="setting-group" data-guide="guideSettingField">
               <label htmlFor="fontSize" data-i18n="fontSize">
                 Fonta izmērs:
               </label>
@@ -118,23 +131,28 @@ export default function Home() {
                 </option>
               </select>
             </div>
-            <button type="submit" data-i18n="save">
+            <button type="submit" data-i18n="save" data-guide="guideSettingsSave">
               Saglabāt
             </button>
-            <button type="button" onClick={() => resetSettings()} data-i18n="reset">
+            <button
+              type="button"
+              onClick={() => resetSettings()}
+              data-i18n="reset"
+              data-guide="guideSettingsReset"
+            >
               Atiestatīt
             </button>
           </form>
         </div>
       </div>
 
-      <div className="demo-banner" data-i18n="demoBanner">
+      <div className="demo-banner" data-i18n="demoBanner" data-guide="guideBanner">
         DEMO · izdomāti dati · parole: Tests123?
       </div>
 
       {/* Public content (shown before login) */}
       <div id="publicContent">
-        <header>
+        <header data-guide="guidePublicHeader">
           <div style={{ position: 'relative' }}>
             <h1 data-i18n="schoolName">Tests skola</h1>
             <p data-i18n="semester2">DEMO · II semestris</p>
@@ -142,6 +160,7 @@ export default function Home() {
               <button
                 onClick={() => openLogin()}
                 data-i18n="login"
+                data-guide="guideLoginBtn"
                 style={{
                   padding: '12px 20px',
                   backgroundColor: 'var(--accent-color)',
@@ -159,6 +178,7 @@ export default function Home() {
                 type="button"
                 data-i18n="langButton"
                 data-i18n-aria="langAria"
+                data-guide="guideLang"
                 aria-label="Valoda"
               >
                 EN
@@ -168,6 +188,7 @@ export default function Home() {
                 className="settings-toggle"
                 type="button"
                 data-i18n-aria="settingsAria"
+                data-guide="guideSettings"
                 aria-label="Piekļūstamības iestatījumi"
               >
                 <img src="/hamsterwheel.gif" alt="" width="40" height="40" />
@@ -177,6 +198,7 @@ export default function Home() {
                 className="theme-toggle"
                 type="button"
                 data-i18n-aria="themeToggle"
+                data-guide="guideTheme"
                 aria-label="Pārslēgt tumšo / gaišo režīmu"
                 aria-pressed="false"
               >
@@ -185,7 +207,7 @@ export default function Home() {
             </div>
           </div>
         </header>
-        <main className="public-stage">
+        <main className="public-stage" data-guide="guidePhoto">
           <p className="public-photo-credit" data-i18n="photoCredit">
             Foto: Sebastian Unrau / Unsplash
           </p>
@@ -218,7 +240,7 @@ export default function Home() {
 
       {/* Main visible content (shown after login) */}
       <div id="mainContent" className="hidden">
-        <header>
+        <header data-guide="guideHeader">
           <div style={{ position: 'relative' }}>
             <h1 data-i18n="schoolName">Tests skola</h1>
             <p data-i18n="semester2">DEMO · II semestris</p>
@@ -226,16 +248,22 @@ export default function Home() {
               className="schedule-updated"
               data-i18n-aria="updatedAria"
               data-updated={SCHEDULE_UPDATED}
+              data-guide="guideUpdated"
               aria-label={`Pēdējoreiz atjaunots ${SCHEDULE_UPDATED}`}
             >
               🔄 {SCHEDULE_UPDATED}.
             </p>
-            <p id="my-class-chip" className="my-class-chip hidden" hidden>
+            <p
+              id="my-class-chip"
+              className="my-class-chip hidden"
+              hidden
+              data-guide="guideMyClass"
+            >
               <span data-i18n="myClass">Mana klase</span>:{' '}
               <strong id="my-class-label"></strong>
             </p>
             <div className="header-controls">
-              <label className="toggle-switch">
+              <label className="toggle-switch" data-guide="guideCampus">
                 <input type="checkbox" id="address-toggle" defaultChecked />
                 <span className="slider">
                   <span className="slider-text-p">P</span>
@@ -247,6 +275,7 @@ export default function Home() {
                 className="settings-toggle"
                 type="button"
                 data-i18n-aria="settingsAria"
+                data-guide="guideSettings"
                 aria-label="Piekļūstamības iestatījumi"
               >
                 <img src="/hamsterwheel.gif" alt="" width="40" height="40" />
@@ -256,6 +285,7 @@ export default function Home() {
                 className="theme-toggle"
                 type="button"
                 data-i18n-aria="themeToggle"
+                data-guide="guideTheme"
                 aria-label="Pārslēgt tumšo / gaišo režīmu"
                 aria-pressed="false"
               >
@@ -265,9 +295,9 @@ export default function Home() {
           </div>
         </header>
         <main>
-          <div className="nav-box">
+          <div className="nav-box" data-guide="guideNavBox">
             <div className="radio-group">
-              <label htmlFor="sodien-radio">
+              <label htmlFor="sodien-radio" data-guide="guideNavToday">
                 <input
                   type="radio"
                   name="section"
@@ -277,7 +307,7 @@ export default function Home() {
                 />
                 <span data-i18n="navToday">Šodien</span>
               </label>
-              <label htmlFor="stundu-radio">
+              <label htmlFor="stundu-radio" data-guide="guideNavLessons">
                 <input
                   type="radio"
                   name="section"
@@ -286,7 +316,7 @@ export default function Home() {
                 />
                 <span data-i18n="navLessons">Stundu saraksts</span>
               </label>
-              <label htmlFor="konsultaciju-radio">
+              <label htmlFor="konsultaciju-radio" data-guide="guideNavConsult">
                 <input
                   type="radio"
                   name="section"
@@ -295,7 +325,7 @@ export default function Home() {
                 />
                 <span data-i18n="navConsult">Konsultāciju saraksts</span>
               </label>
-              <label htmlFor="pulcins-radio">
+              <label htmlFor="pulcins-radio" data-guide="guideNavClubs">
                 <input
                   type="radio"
                   name="section"
@@ -306,7 +336,7 @@ export default function Home() {
               </label>
             </div>
             <div id="today-filters" className="today-filters">
-              <label className="today-filter">
+              <label className="today-filter" data-guide="guideFilterTeacher">
                 <span data-i18n="teacher">Skolotājs</span>
                 <input
                   type="text"
@@ -318,7 +348,7 @@ export default function Home() {
                 />
                 <datalist id="teacher-options"></datalist>
               </label>
-              <label className="today-filter">
+              <label className="today-filter" data-guide="guideFilterRoom">
                 <span data-i18n="room">Telpa</span>
                 <input
                   type="text"
@@ -329,7 +359,7 @@ export default function Home() {
                 />
                 <datalist id="room-options"></datalist>
               </label>
-              <label className="today-filter">
+              <label className="today-filter" data-guide="guideFilterClub">
                 <span data-i18n="club">Pulciņš</span>
                 <input
                   type="text"
@@ -347,29 +377,38 @@ export default function Home() {
               id="searchInput"
               placeholder="Meklēt pēc skolotāja, pulciņa, telpas....."
               data-i18n-placeholder="searchPlaceholder"
+              data-guide="guideSearch"
             />
-            <select id="grade-select">
+            <select id="grade-select" data-guide="guideGrade">
               <option value="" data-i18n="allClasses">
                 Visas klases
               </option>
             </select>
             <div className="button-group">
-              <button onClick={() => clearSelections()} data-i18n="clear">
+              <button
+                onClick={() => clearSelections()}
+                data-i18n="clear"
+                data-guide="guideClear"
+              >
                 Notīrīt
               </button>
-              <button onClick={() => logout()} data-i18n="logout">
+              <button
+                onClick={() => logout()}
+                data-i18n="logout"
+                data-guide="guideLogout"
+              >
                 Iziet
               </button>
             </div>
           </div>
-          <div id="content"></div>
+          <div id="content" data-guide="guideContent"></div>
           <div id="noResults" className="hidden">
             <span data-i18n="noResults">
               Nav atrasts atbilstošs. Pamēģiniet citu meklēšanu!
             </span>
           </div>
         </main>
-        <footer>
+        <footer data-guide="guideFooter">
           <p data-i18n="versionBeta">Demonstrācijas versija</p>
           <p
             className="schedule-updated"
@@ -388,6 +427,7 @@ export default function Home() {
             type="button"
             data-i18n="langButton"
             data-i18n-aria="langAria"
+            data-guide="guideLang"
             aria-label="Valoda"
           >
             EN

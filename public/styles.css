@@ -1293,6 +1293,31 @@ body.task-mode .nav-top {
   background: #555 !important;
 }
 
+.demo-guide-popup {
+  position: fixed;
+  z-index: 20000;
+  max-width: 280px;
+  padding: 8px 11px;
+  background: #ffffff;
+  color: #000000;
+  border: 1px solid #111111;
+  border-radius: 4px;
+  font-size: 13px;
+  line-height: 1.35;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(2px);
+}
+
+.demo-guide-popup.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+
 /* Flip Book Notes Styles */
 .page-tools {
   position: fixed;

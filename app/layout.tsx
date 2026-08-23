@@ -29,6 +29,7 @@ export default function RootLayout({
         {children}
         <Analytics />
         <Script src="/js/i18n.js" strategy="afterInteractive" />
+        <Script src="/js/demo-guide.js" strategy="afterInteractive" />
         <Script src="/public.js" strategy="afterInteractive" />
         <Script src="/script.js" strategy="afterInteractive" />
         <Script

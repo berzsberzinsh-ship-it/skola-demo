@@ -116,6 +116,56 @@
       pwaContentBody: 'Ir pieejami jauni mācību materiāli vai grafiki.',
       pwaUpdate: 'Atjaunināt',
       pwaLater: 'Vēlāk',
+      guideBanner:
+        'Demonstrācija ar izdomātiem datiem. Parole visām skolām: Tests123?',
+      guideLoginBtn:
+        'Atver pieteikšanās logu, lai skatītu stundu, konsultāciju un pulciņu sarakstus.',
+      guideLang: 'Pārslēdz valodu — latviešu vai angļu.',
+      guideSettings:
+        'Piekļūstamība: krāsas, fonts un teksta izmērs. Saglabājas šajā ierīcē.',
+      guideTheme: 'Pārslēdz gaišo un tumšo izskatu.',
+      guideLoginWindow:
+        'Ievadiet paroli, lai atvērtu grafikus. Demonstrācijas parole: Tests123?',
+      guideLoginPassword: 'Šeit ievadiet paroli Tests123?',
+      guideLoginSubmit: 'Nospiediet, lai ieietu sistēmā.',
+      guideClose: 'Aizver šo logu.',
+      guideSettingsWindow:
+        'Šeit var mainīt krāsas un fontu. Izmaiņas paliek tikai šajā pārlūkā.',
+      guideSettingField: 'Mainiet šo krāsu vai fontu.',
+      guideSettingsSave: 'Saglabā izvēlētos iestatījumus šajā pārlūkā.',
+      guideSettingsReset: 'Atgriež noklusējuma krāsas un fontu.',
+      guidePhoto:
+        'Publiskā sākumlapas bilde. Pēc ieiešanas šeit parādās grafiki.',
+      guidePublicHeader:
+        'Tests skola — demonstrācija. Ienāciet sistēmā, lai redzētu sarakstus.',
+      guideCampus:
+        'Parka iela (P) vai Ezera iela (E) — divas fiktīvas skolas ēkas.',
+      guideNavToday:
+        'Šodien: kas notiek tagad, nākamā stunda, pulciņi un konsultācijas.',
+      guideNavLessons: 'Visas nedēļas stundu saraksts izvēlētajai klasei.',
+      guideNavConsult: 'Skolotāju konsultāciju laiki.',
+      guideNavClubs: 'Pulciņu nosaukumi, vietas un laiki.',
+      guideFilterTeacher:
+        'Atlasiet pēc skolotāja vārda. Ierīce izvēli atceras.',
+      guideFilterRoom: 'Atlasiet pēc telpas, piemēram, 101.k.',
+      guideFilterClub: 'Atlasiet pēc pulciņa, piemēram, Koris.',
+      guideSearch: 'Meklē visos sarakstos: skolotājs, pulciņš vai telpa.',
+      guideGrade: 'Klase: 1.a–5.a Parkā (P), 6.a–8.a Ezerā (E).',
+      guideClear: 'Notīra meklēšanu, filtrus un klases izvēli.',
+      guideLogout: 'Iziet un atgriežas publiskajā lapā.',
+      guideNavBox:
+        'Izvēlieties, ko rādīt: šodien, stundas, konsultācijas vai pulciņi.',
+      guideContent: 'Šeit parādās izvēlētais saraksts.',
+      guideFooter: 'Kontakti. Rakstiet, ja skolai vajag šādu rīku.',
+      guideHeader: 'Skolas nosaukums un pēdējā saraksta atjauninājuma datums.',
+      guideUpdated: 'Kad šie fiktīvie saraksti pēdējoreiz mainīti.',
+      guidePrint: 'Drukā izvēlētās klases nedēļas sarakstu.',
+      guideShare: 'Kopē vai nosūta saiti uz šīs klases sarakstu.',
+      guideWeek: 'Atver visas nedēļas stundu sarakstu šai klasei.',
+      guideNotes: 'Pieraksti paliek šajā ierīcē — īss piezīmju bloks.',
+      guideNotesAdd: 'Pievieno jaunu pierakstu.',
+      guideNotesWindow: 'Šeit var rakstīt īsus pierakstus par stundām.',
+      guideMyClass: 'Pēdējā izvēlētā klase šajā ierīcē.',
     },
     en: {
       schoolName: 'Tests School',
@@ -228,6 +278,56 @@
       pwaContentBody: 'New learning materials or timetables are available.',
       pwaUpdate: 'Update',
       pwaLater: 'Later',
+      guideBanner:
+        'Demo with fictional data. Password for all schools: Tests123?',
+      guideLoginBtn:
+        'Opens login so you can view lessons, consultations and clubs.',
+      guideLang: 'Switch language — Latvian or English.',
+      guideSettings:
+        'Accessibility: colours, font and text size. Saved on this device.',
+      guideTheme: 'Switch light and dark appearance.',
+      guideLoginWindow:
+        'Enter the password to open the timetables. Demo password: Tests123?',
+      guideLoginPassword: 'Type the password Tests123? here.',
+      guideLoginSubmit: 'Press to log in.',
+      guideClose: 'Close this window.',
+      guideSettingsWindow:
+        'Change colours and font. Settings stay in this browser only.',
+      guideSettingField: 'Change this colour or font.',
+      guideSettingsSave: 'Save these settings in this browser.',
+      guideSettingsReset: 'Restore the default colours and font.',
+      guidePhoto:
+        'Public landing photo. After login, timetables appear here.',
+      guidePublicHeader:
+        'Tests School demo. Log in to see the timetables.',
+      guideCampus:
+        'Parka iela (P) or Ezera iela (E) — two fictional school buildings.',
+      guideNavToday:
+        'Today: what is happening now, next lesson, clubs and consultations.',
+      guideNavLessons: 'The full-week timetable for the selected class.',
+      guideNavConsult: 'Teacher consultation hours.',
+      guideNavClubs: 'Club names, rooms and times.',
+      guideFilterTeacher:
+        'Filter by teacher name. This device remembers the choice.',
+      guideFilterRoom: 'Filter by room, for example 101.k.',
+      guideFilterClub: 'Filter by club, for example Choir.',
+      guideSearch: 'Search all lists: teacher, club or room.',
+      guideGrade: 'Class: 1.a–5.a at Parka (P), 6.a–8.a at Ezera (E).',
+      guideClear: 'Clear search, filters and the class choice.',
+      guideLogout: 'Log out and return to the public page.',
+      guideNavBox:
+        'Choose what to show: today, lessons, consultations or clubs.',
+      guideContent: 'The selected list appears here.',
+      guideFooter: 'Contact. Write if your school wants a tool like this.',
+      guideHeader: 'School name and when the timetable was last updated.',
+      guideUpdated: 'When these fictional lists were last changed.',
+      guidePrint: 'Print the selected class week.',
+      guideShare: 'Copy or send a link to this class timetable.',
+      guideWeek: 'Open the full-week timetable for this class.',
+      guideNotes: 'Notes stay on this device — a quick notepad.',
+      guideNotesAdd: 'Add a new note.',
+      guideNotesWindow: 'Write short notes about lessons here.',
+      guideMyClass: 'The last class chosen on this device.',
     },
   };
 

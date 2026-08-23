@@ -1,4 +1,4 @@
-const CACHE_NAME = 'SKOLA-DEMO-v1';
+const CACHE_NAME = 'SKOLA-DEMO-v2';
 const urlsToCache = [
   '/index.html',
   '/styles.css',
@@ -12,6 +12,7 @@ const urlsToCache = [
   '/lightmode.gif',
   '/hamsterwheel.gif',
   '/js/i18n.js',
+  '/js/demo-guide.js',
 ];
 
 self.addEventListener('install', (event) => {
