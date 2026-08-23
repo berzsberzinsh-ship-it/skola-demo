@@ -286,42 +286,12 @@
   };
 
   const PHRASES = {
-    '1. klašu koris': 'Grade 1 choir',
-    '2. –4. klašu koris': 'Grades 2–4 choir',
-    '2. –4. klašu vokālais ansamblis': 'Grades 2–4 vocal ensemble',
-    '4. –7. klašu zēnu koris': 'Grades 4–7 boys’ choir',
-    '5. –7. klašu zēnu koris': 'Grades 5–7 boys’ choir',
-    '5. –9. klašu koris „rīta spārni”': 'Grades 5–9 choir “Rīta spārni”',
-    '5. –9. klašu zēnu vokālais ansamblis': 'Grades 5–9 boys’ vocal ensemble',
-    'bibliotēka: lasītājiem': 'Library: for readers',
-    'dabaszinību pulciņš': 'Nature studies club',
-    eiritmija: 'Eurythmy',
-    'galda teniss 2.-6. klasei': 'Table tennis, grades 2–6',
-    'galda teniss 6.-9.kl.': 'Table tennis, grades 6–9',
-    'kokapstrādes pulciņš': 'Woodwork club',
-    'kokles spēle': 'Kokle',
-    'koriģējošā vingrošana': 'Corrective gymnastics',
-    'lietišķā māksla': 'Applied arts',
-    'liras spēle': 'Lyre',
-    'mazais dancis': 'Little folk dance',
-    orķestris: 'Orchestra',
-    'orķestris 5.-6. klasei': 'Orchestra, grades 5–6',
-    'spēļu vingrošana': 'Play gymnastics',
-    'stīgu orķestris (vijoles spēle)': 'String orchestra (violin)',
-    tekstildarbi: 'Textile crafts',
+    koris: 'Choir',
+    'vizuālā māksla': 'Visual art',
+    'sporta pulciņš': 'Sports club',
+    datorika: 'Computing',
     teātris: 'Drama',
-    veidošana: 'Modelling',
-    'vispusīga fiziskā sagatavotība "mazie sportisti"':
-      'General fitness “Little athletes”',
-    'vizuālās mākslas studija': 'Visual art studio',
-    'vizuālās mākslas studija (gleznošana)': 'Visual art studio (painting)',
-    'vokālais ansamblis „mellenes” 2. klase':
-      'Vocal ensemble “Mellenes”, grade 2',
-    'vokālais ansamblis „mellenes” 3. klase':
-      'Vocal ensemble “Mellenes”, grade 3',
-    'vokālais ansamblis „mellenes” 4. -6. klase':
-      'Vocal ensemble “Mellenes”, grades 4–6',
-    'ģitāras studija': 'Guitar studio',
+    basketbols: 'Basketball',
   };
 
   function getLanguage() {
