@@ -1,4 +1,4 @@
-const CACHE_NAME = 'SKOLA-DEMO-v2';
+const CACHE_NAME = 'SKOLA-DEMO-v3';
 const urlsToCache = [
   '/index.html',
   '/styles.css',
