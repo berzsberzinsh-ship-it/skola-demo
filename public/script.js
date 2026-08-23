@@ -2009,22 +2009,15 @@ function clearSelections() {
 }
 
 function themeToggleMarkup(isDark) {
-  const src = isDark ? '/darkmode.gif' : '/lightmode.gif';
-  return `<img src="${src}" alt="" width="40" height="40">`;
-}
-
-function expectedThemeGif(isDark) {
-  return isDark ? 'darkmode.gif' : 'lightmode.gif';
+  return isDark ? '☀️' : '🌙';
 }
 
 function syncThemeToggleButtons() {
   const isDark = document.body.classList.contains('dark-mode');
-  const expected = expectedThemeGif(isDark);
+  const expected = themeToggleMarkup(isDark);
   document.querySelectorAll('.theme-toggle').forEach((btn) => {
-    const img = btn.querySelector('img');
-    const src = img ? img.getAttribute('src') || '' : '';
-    if (!src.includes(expected)) {
-      btn.innerHTML = themeToggleMarkup(isDark);
+    if ((btn.textContent || '').trim() !== expected) {
+      btn.textContent = expected;
     }
     btn.setAttribute('aria-pressed', isDark ? 'true' : 'false');
   });

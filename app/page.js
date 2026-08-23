@@ -170,7 +170,7 @@ export default function Home() {
                 data-i18n-aria="settingsAria"
                 aria-label="Piekļūstamības iestatījumi"
               >
-                <img src="/hamsterwheel.gif" alt="" width="40" height="40" />
+                ⚙
               </button>
               <button
                 id="public-theme-toggle"
@@ -180,7 +180,7 @@ export default function Home() {
                 aria-label="Pārslēgt tumšo / gaišo režīmu"
                 aria-pressed="false"
               >
-                <img src="/lightmode.gif" alt="" width="40" height="40" />
+                ☀️
               </button>
             </div>
           </div>
@@ -249,7 +249,7 @@ export default function Home() {
                 data-i18n-aria="settingsAria"
                 aria-label="Piekļūstamības iestatījumi"
               >
-                <img src="/hamsterwheel.gif" alt="" width="40" height="40" />
+                ⚙
               </button>
               <button
                 id="theme-toggle"
@@ -259,7 +259,7 @@ export default function Home() {
                 aria-label="Pārslēgt tumšo / gaišo režīmu"
                 aria-pressed="false"
               >
-                <img src="/lightmode.gif" alt="" width="40" height="40" />
+                ☀️
               </button>
             </div>
           </div>
