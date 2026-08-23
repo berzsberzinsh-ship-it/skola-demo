@@ -1,6 +1,6 @@
 {
   "name": "Tests skola",
-  "short_name": "Demo",
+  "short_name": "Tests",
   "description": "Skolas grafiku demonstrācija",
   "start_url": "/",
   "display": "standalone",
