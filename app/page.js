@@ -187,7 +187,7 @@ export default function Home() {
         </header>
         <main className="public-stage">
           <p className="public-photo-credit" data-i18n="photoCredit">
-            Foto: Lisa Heeke / Unsplash
+            Demonstrācijas versija
           </p>
           {/* Public tasks hidden until ready
           <div className="nav-box">
