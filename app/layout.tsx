@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Script from 'next/script';
 import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 export const metadata: Metadata = {
   title: 'Tests skola (demo)',
@@ -28,6 +29,7 @@ export default function RootLayout({
       <body className="public-view">
         {children}
         <Analytics />
+        <SpeedInsights />
         <Script src="/js/i18n.js" strategy="afterInteractive" />
         <Script src="/js/demo-guide.js" strategy="afterInteractive" />
         <Script src="/public.js" strategy="afterInteractive" />
