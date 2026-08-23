@@ -436,6 +436,25 @@ footer a {
   color: rgba(243, 246, 242, 0.65);
 }
 
+@media (max-width: 768px) {
+  #loginModal .modal-content {
+    margin-top: 48vh;
+    margin-bottom: 6vh;
+    margin-left: auto;
+    margin-right: auto;
+    width: 92%;
+  }
+}
+
+@media (max-width: 480px) {
+  #loginModal .modal-content {
+    margin-top: 46vh;
+    margin-bottom: 5vh;
+    width: 94%;
+    padding: 16px;
+  }
+}
+
 .close {
   color: #aaa;
   float: right;
