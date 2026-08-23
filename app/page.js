@@ -136,7 +136,7 @@ export default function Home() {
       <div id="publicContent">
         <header>
           <div style={{ position: 'relative' }}>
-            <h1 data-i18n="schoolName">Ozolu skola</h1>
+            <h1 data-i18n="schoolName">Tests skola</h1>
             <p data-i18n="semester2">DEMO · II semestris</p>
             <div className="header-controls">
               <button
@@ -220,7 +220,7 @@ export default function Home() {
       <div id="mainContent" className="hidden">
         <header>
           <div style={{ position: 'relative' }}>
-            <h1 data-i18n="schoolName">Ozolu skola</h1>
+            <h1 data-i18n="schoolName">Tests skola</h1>
             <p data-i18n="semester2">DEMO · II semestris</p>
             <p
               className="schedule-updated"

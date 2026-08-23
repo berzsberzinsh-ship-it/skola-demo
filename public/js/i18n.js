@@ -4,7 +4,7 @@
 
   const STRINGS = {
     lv: {
-      schoolName: 'Ozolu skola',
+      schoolName: 'Tests skola',
       semester2: 'DEMO · II semestris',
       demoBanner: 'DEMO · izdomāti dati · parole: Tests123?',
       login: 'Ienākt sistēmā',
@@ -118,7 +118,7 @@
       pwaLater: 'Vēlāk',
     },
     en: {
-      schoolName: 'Oak School',
+      schoolName: 'Tests School',
       semester2: 'DEMO · Semester II',
       demoBanner: 'DEMO · fictional data · password: Tests123?',
       login: 'Log in',

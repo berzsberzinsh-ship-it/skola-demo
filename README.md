@@ -1,4 +1,4 @@
-# Ozolu skola — demonstrācijas versija
+# Tests skola — demonstrācijas versija
 
 Publiska testa kopija no [rvaldofkuul.lv](https://rvaldofkuul.lv) ar **izdomātiem datiem**.
 Paredzēta Latvijas skolām, lai apskatītu grafiku skatītāju (stundas, konsultācijas, pulciņi, šodienas skats).

@@ -3,7 +3,7 @@ import Script from 'next/script';
 import { Analytics } from '@vercel/analytics/next';
 
 export const metadata: Metadata = {
-  title: 'Ozolu skola (demo)',
+  title: 'Tests skola (demo)',
   description: 'Demonstrācijas versija ar izdomātiem datiem — skolas grafiki',
   icons: {
     icon: '/favicon.png',
